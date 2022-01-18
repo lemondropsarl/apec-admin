@@ -1,27 +1,35 @@
 import React, { FC, useState } from "react";
-import Link from "next/link";
 import DropDownMenu from "./DropDownMenu";
 
 const User: React.FC = () => {
-    const [downMenu, setdownMenu] = useState<Boolean>(false)
-    const handleDropDownMenu = () => {
-        setdownMenu(!downMenu)
-    }
-     
+  const [downMenu, setdownMenu] = useState<Boolean>(false);
+  const handleDropDownMenu = () => {
+    setdownMenu(!downMenu);
+  };
+
   return (
     <>
-      <div className="relative inline-block">
-              <button className=" text-white py-2 px-2" onClick={handleDropDownMenu}>
-          Hi, User
+      <div className="inline-bloxk relative">
+        <button
+          className="flex text-white  space-x-2 items-center"
+          onClick={handleDropDownMenu}
+        >
           <svg
-            className="h-3 fill-current inline"
             xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
             viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+              clip-rule="evenodd"
+            />
           </svg>
+          <h3>Joseph</h3>
+          <span className="fas fa-caret-down"></span>
         </button>
-        { (downMenu) ? <DropDownMenu/> : ' ' }
+        {downMenu ? <DropDownMenu /> : " "}
       </div>
     </>
   );
